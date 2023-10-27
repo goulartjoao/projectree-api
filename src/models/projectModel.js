@@ -12,7 +12,7 @@ Project.init(
       type: DataTypes.TEXT,
     },
     area_extension: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.DECIMAL,
       description: 'Area extension in square meters',
     },
   },
