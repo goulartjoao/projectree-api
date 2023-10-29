@@ -2,39 +2,54 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
 const { v4: uuidv4 } = require('uuid');
 
-class Fauna extends Model {}
+class Article extends Model {}
 
-Fauna.init(
+Article.init(
   {
     id: {
       type: DataTypes.UUID,
       defaultValue: () => uuidv4(),
       primaryKey: true,
     },
-    specie: {
+    reference_author: {
       type: DataTypes.TEXT,
     },
-    gender: {
+    title: {
       type: DataTypes.TEXT,
     },
-    family: {
+    keyword: {
       type: DataTypes.TEXT,
     },
-    diet: {
+    location: {
       type: DataTypes.TEXT,
     },
-    locomotion: {
+    latitude: {
       type: DataTypes.TEXT,
     },
-    habitat: {
+    longitude: {
+      type: DataTypes.TEXT,
+    },
+    publication_name: {
+      type: DataTypes.TEXT,
+    },
+    listed_pub_date: {
+      type: DataTypes.DATEONLY,
+    },
+    actual_pub_date: {
+      type: DataTypes.DATEONLY,
+    },
+    pages: {
+      type: DataTypes.TEXT,
+    },
+    pub_comment: {
       type: DataTypes.TEXT,
     },
   },
   {
     sequelize,
-    modelName: 'fauna',
+    modelName: 'article',
     timestamps: false,
   }
 );
 
-module.exports = Fauna;
+module.exports = Article;

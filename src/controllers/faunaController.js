@@ -46,6 +46,8 @@ module.exports = {
       }
 
       fauna.specie = specie;
+      fauna.gender = gender;
+      fauna.family = family;
       fauna.diet = diet;
       fauna.locomotion = locomotion;
       fauna.habitat = habitat;

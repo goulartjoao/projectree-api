@@ -21,6 +21,12 @@ Project.init(
       type: DataTypes.DECIMAL,
       description: 'Area extension in square meters',
     },
+    latitude: {
+      type: DataTypes.TEXT,
+    },
+    longitude: {
+      type: DataTypes.TEXT,
+    },
   },
   {
     sequelize,
