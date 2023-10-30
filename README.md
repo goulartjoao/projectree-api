@@ -45,7 +45,7 @@ npm run start
 ## Authors
 
 João Pedro Goulart
-ex. [@LinkedIn](https://www.linkedin.com/in/jo%C3%A3o-pedro-goulart-36033b249/)
+[@LinkedIn](https://www.linkedin.com/in/jo%C3%A3o-pedro-goulart-36033b249/)
 
 
 ## License
