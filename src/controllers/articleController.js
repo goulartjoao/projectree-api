@@ -1,4 +1,6 @@
 const Article = require('../models/articleModel');
+const Project = require('../models/projectModel');
+const geolib = require('geolib');
 
 module.exports = {
   async all(request, response) {
@@ -20,6 +22,37 @@ module.exports = {
       }
 
       response.status(200).json(article);
+    } catch (error) {
+      response.status(400).send(error);
+    }
+  },
+
+  async findArticlesNearProject(request, response) {
+    try {
+      const projectId = request.params.id;
+      const project = await Project.findOne({ where: { id: projectId } });
+      const radius = parseFloat(request.params.radius);
+
+      if (!project) {
+        return response.status(400).json('Project not found');
+      }
+
+      const latitude = Number(project.latitude);
+      const longitude = Number(project.longitude);
+
+      const articles = await Article.findAll();
+
+      const articlesNearProject = articles.filter((article) => {
+        const isWithinRadius = geolib.isPointWithinRadius(
+          { latitude: Number(article.latitude), longitude: Number(article.longitude) },
+          { latitude, longitude },
+          radius*1000 // Kilometers to meters <-> 50km to 500000m
+        );
+
+        return isWithinRadius;
+      });
+
+      response.status(200).json(articlesNearProject);
     } catch (error) {
       response.status(400).send(error);
     }
