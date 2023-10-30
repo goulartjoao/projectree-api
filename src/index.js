@@ -4,6 +4,7 @@ const ProjectRoutes = require('./routes/projects.routes');
 const FaunaRoutes = require('./routes/faunas.routes');
 const FloraRoutes = require('./routes/floras.routes');
 const ArticleRoutes = require('./routes/article.routes');
+const RelevantInfoRoutes = require('./routes/relevantInfos.routes');
 
 const app = express();
 
@@ -21,6 +22,7 @@ app.use(express.json());
 app.use('/api/projects', ProjectRoutes);
 app.use('/api/faunas', FaunaRoutes);
 app.use('/api/floras', FloraRoutes);
+app.use('/api/relevantInfos', RelevantInfoRoutes);
 app.use('/api/articles', ArticleRoutes);
 
 app.listen(3000, () => {
