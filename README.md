@@ -1,10 +1,8 @@
-# Project Title
-
-ProjecTree-api
+# ProjecTree-api
 
 ## Description
 
-Welcome to the Projectree API. This API provides essential functionality to manage environmental projects, tasks, and more.
+Welcome to the ProjecTree-API. This API provides essential functionality to manage environmental projects, tasks, and more.
 
 
 ## Getting Started
@@ -46,10 +44,8 @@ npm run start
 
 ## Authors
 
-Contributors names and contact info
-
 João Pedro Goulart
-ex. [@LinkedId](https://www.linkedin.com/in/jo%C3%A3o-pedro-goulart-36033b249/)
+ex. [@LinkedIn](https://www.linkedin.com/in/jo%C3%A3o-pedro-goulart-36033b249/)
 
 
 ## License
