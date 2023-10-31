@@ -36,7 +36,7 @@ module.exports = {
 
   async update(request, response) {
     try {
-      const { name, description, area_extension } = request.body;
+      const { name, description, area_extension, latitude, longitude } = request.body;
       const id = request.params.id;
 
       const project = await Project.findOne({ where: { id } });
@@ -48,6 +48,8 @@ module.exports = {
       project.name = name;
       project.description = description;
       project.area_extension = area_extension;
+      project.latitude = latitude;
+      project.longitude = longitude;
 
       await project.save();
       response.status(201).json("project updated successfully");
