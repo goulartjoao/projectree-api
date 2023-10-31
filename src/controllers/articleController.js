@@ -69,7 +69,7 @@ module.exports = {
 
   async update(request, response) {
     try {
-      const { specie, diet, locomotion, habitat } = request.body;
+      const { title, keyword, location, publication_name, listed_pub_date, actual_pub_date, pages, pub_comment } = request.body;
       const id = request.params.id;
 
       const article = await Article.findOne({ where: { id } });
